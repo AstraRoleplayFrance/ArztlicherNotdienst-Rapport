@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rapport Ärztlicher Notdienst - Astra Roleplay V2</title>
+    <style>
+      /* Styles de base */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f7f7f7;
+        color: #333;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* En-tête */
+      header {
+        text-align: center;
+        margin-top: 20px;
+      }
+      header img {
+        width: 300px;
+        margin-bottom: 50px;
+        animation: fadeIn 1.5s ease-in-out;
+      }
+      header h1 {
+        color: #d9534f;
+        font-size: 28px;
+        margin: 0;
+        font-weight: bold;
+      }
+
+      /* Conteneur du formulaire */
+      .form-container {
+        background-color: #ffffff;
+        padding: 20px 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+        margin: 30px;
+        opacity: 0;
+        animation: slideUp 0.8s forwards;
+        border-top: 5px solid #d9534f;
+      }
+
+      /* Titre formulaire */
+      .form-container h2 {
+        text-align: center;
+        color: #d9534f;
+        margin-top: 0;
+        font-size: 24px;
+      }
+
+      /* Champs de formulaire */
+      .form-container label {
+        font-weight: bold;
+        margin-top: 10px;
+        display: block;
+      }
+      .form-container input,
+      .form-container textarea,
+      .form-container button {
+        width: 100%;
+        padding: 12px;
+        margin: 8px 0;
+        border: 1px solid #ced4da;
+        border-radius: 6px;
+        font-size: 16px;
+        transition: border-color 0.3s;
+      }
+      .form-container input:focus,
+      .form-container textarea:focus {
+        border-color: #d9534f;
+        outline: none;
+      }
+      .form-container button {
+        background-color: #d9534f;
+        color: #ffffff;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+      .form-container button:hover {
+        background-color: #c9302c;
+        transform: scale(1.02);
+      }
+
+      /* Section des icônes */
+      .form-container label::before {
+        content: "• ";
+        color: #d9534f;
+        font-size: 18px;
+      }
+
+      /* Animation de transition */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes slideUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        padding: 15px;
+        font-size: 14px;
+        color: #666;
+        width: 100%;
+        background-color: #d9534f;
+        color: #ffffff;
+      }
+      footer a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- En-tête avec le logo et le titre -->
+    <header>
+      <img
+        src="Ärztlicher Notdienst.jpg"
+        alt="Logo Ärztlicher Notdienst"
+      />
+      <h1>Rapport d'Intervention SAMU - Astra Roleplay V2</h1>
+    </header>
+
+    <!-- Formulaire principal -->
+    <div class="form-container">
+      <h2>Rapport d'Intervention</h2>
+      <form id="discordForm">
+        <!-- Informations de l'intervenant -->
+        <label for="intervenant_samu">👨‍⚕️ Intervenant:</label>
+        <input
+          type="text"
+          id="intervenant_samu"
+          placeholder="Nom de l'intervenant"
+          required
+        />
+
+        <label for="badge_samu">🆔 Badge:</label>
+        <input
+          type="text"
+          id="badge_samu"
+          placeholder="Numéro de badge"
+          required
+        />
+
+        <label for="lieu_samu">📍 Lieu:</label>
+        <input
+          type="text"
+          id="lieu_samu"
+          placeholder="Lieu de l'intervention"
+          required
+        />
+
+        <label for="date_samu">📅 Date:</label>
+        <input type="date" id="date_samu" required />
+
+        <label for="telephone_samu">📞 Téléphone:</label>
+        <input
+          type="text"
+          id="telephone_samu"
+          placeholder="Numéro de téléphone"
+          required
+        />
+
+        <label for="adresse_samu">🏠 Adresse:</label>
+        <input
+          type="text"
+          id="adresse_samu"
+          placeholder="Adresse du lieu"
+          required
+        />
+
+        <label for="etat_mental_samu">🧠 État Mental:</label>
+        <input
+          type="text"
+          id="etat_mental_samu"
+          placeholder="État mental du patient"
+          required
+        />
+
+        <label for="medications_samu">💊 Médications:</label>
+        <input
+          type="text"
+          id="medications_samu"
+          placeholder="Médications administrées (si applicable)"
+        />
+
+        <label for="description_samu">📋 Description:</label>
+        <textarea
+          id="description_samu"
+          rows="4"
+          placeholder="Description de l'intervention"
+          required
+        ></textarea>
+
+        <!-- Section des victimes -->
+        <label for="nombre_victimes">🚑 Nombre de Victimes:</label>
+        <input
+          type="number"
+          id="nombre_victimes"
+          placeholder="Nombre de victimes"
+          required
+        />
+
+        <label for="infos_victimes">📑 Informations des Victimes:</label>
+        <textarea
+          id="infos_victimes"
+          rows="3"
+          placeholder="Détails des victimes (âge, état, blessures)"
+          required
+        ></textarea>
+
+        <!-- Bouton d'envoi -->
+        <button type="button" onclick="sendToDiscord()">
+          Envoyer le Rapport
+        </button>
+      </form>
+    </div>
+
+    <!-- Pied de page -->
+    <footer>
+      © 2024 <a href="#">Astra Roleplay V2</a> - Tous droits réservés
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
